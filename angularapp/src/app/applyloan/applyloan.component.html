@@ -1,0 +1,185 @@
+<div class="my-5">
+    <div class="mx-auto w-25 " style="max-width:100%;">
+      <h2 class="text-center mb-3">Loan Application Form</h2>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="loantype" class="form-label">Loan Type</label>
+              <input id="loantype"  formControlName="loantype" type="text" name="loantype" class="form-control" placeholder="Loan Type" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantName" class="form-label">Applicant Name</label>
+              <input id="applicantName"  formControlName="applicantName" type="text" name="applicantName" class="form-control" placeholder="Applicant Name" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantAddress" class="form-label">Applicant Address</label>
+              <input id="applicantAddress"  formControlName="applicantAddress" type="text" name="applicantAddress" class="form-control" placeholder="Applicant Address" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantMobile" class="form-label">Applicant Mobile</label>
+              <input id="applicantMobile"  formControlName="applicantMobile" type="text" name="applicantMobile" class="form-control" placeholder="Applicant Mobile" required>
+            </div>
+            <div *ngIf="!applicantMobile?.valid">
+              <div [hidden]="!applicantMobile?.hasError('required')">Enter valid mobile number</div>
+              <div [hidden]="!applicantMobile?.hasError('pattern')"> Length should be 10</div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantEmail" class="form-label">Applicant Email</label>
+              <input id="applicantEmail"  formControlName="applicantEmail" type="text" name="applicantEmail" class="form-control" placeholder="Applicant Email" required>
+            </div>
+            <div *ngIf="!applicantEmail?.valid && (applicantEmail?.dirty ||applicantEmail?.touched)">
+              <div [hidden]="!applicantEmail?.hasError('email')">Enter Valid Email</div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantAadhar" class="form-label">Applicant Aadhar</label>
+              <input id="applicantAadhar"  formControlName="applicantAadhar" type="text" name="applicantAadhar" class="form-control" placeholder="Applicant Aadhar" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantPan" class="form-label">Applicant Pan</label>
+              <input id="applicantPan"  formControlName="applicantPan" type="text" name="applicantPan" class="form-control" placeholder="Applicant Pan" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantSalary" class="form-label">Applicant Salary</label>
+              <input id="applicantSalary"  formControlName="applicantSalary" type="text" name="applicantSalary" class="form-control" placeholder="Applicant Salary " required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="loanAmountRequired" class="form-label">Loan Amount Required</label>
+              <input id="loanAmountRequired"  formControlName="loanAmountRequired" type="text" name="loanAmountRequired" class="form-control" placeholder="Loan Amount Required" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="document" class="form-label">Upload File</label>
+              <input type="file" id="myFile" name="filename" class="form-control">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input [disabled]="!form.valid" class="btn btn-primary w-100" type="submit" value="Submit" >
+              <a href="#" routerLink='/user'>Go Back</a>
+            </div>
+          </div>
+          <div>
+          </div>
+        </form>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="loanRepaymentMonths" class="form-label">Loan Repayment Months</label>
+              <label for="loanRepaymentMonths" class="form-label">Loan Repayment Months</label>
+              <input id="loanRepaymentMonths"  formControlName="loanRepaymentMonths" type="text" name="loanRepaymentMonths" class="form-control" placeholder="" required>
+            </div>
+          </div> -->
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container" >
+    <form #applyloan="ngForm" (ngSubmit)="onSubmit(applyloan.value)">
+     <br> <input type="text" id="enterName" placeholder="Enter Applicant Name" ngModel> <br>
+     
+     <br> <input type="text" id="enterAddress" placeholder="Enter Applicant Address" ngModel> <br>
+     
+     <br> <input type="text" id="enterMobile" placeholder="Enter Applicant Mobile" ngModel> <br>
+     
+     <br> <input type="text" id="enterEmail" placeholder="Enter Applicant Email Id" ngModel> <br>
+     
+     <br> <input type="text" id="enterAadharNo" placeholder="Enter Applicant Aadhar No" ngModel> <br>
+     
+     <br> <input type="text" id="enterPanNo" placeholder="Enter Applicant Pan No" ngModel> <br>
+     
+     <br> <input type="text" id="enterSalary" placeholder="Enter Applicant Salary" ngModel> <br>
+     
+     <br> <input type="text" id="enterAmount" placeholder="Enter Loan Amount Required" ngModel> <br>
+     
+     <p>Images or Documents </p> <input type="file" id="chooseFile" class="file-upload" onchange="console.log(event.target.files)" ngModel> <br>
+     
+     
+     
+     
+     <h4>UploadDocument(Mandatory)</h4>
+     
+     <select>
+     
+      <option id="selectDocumentType">
+     
+      Aadhar
+     
+      </option>
+     
+      <option>
+     
+      Pan
+     
+      </option>
+     
+      <option>
+     
+      votercard
+     
+      </option>
+     
+     </select>
+     
+     <div class="formcheck">
+     
+      <P>Enter Loan Repay Month</P>
+     
+      <input class="form-check-input" type="radio" name="Enter Loan Repay Month" id="enterMonths" value="option1" checked ngModel>
+      <label class="form-check-label" for="Enter Loan Repay Month">
+     6 Months
+     
+      </label>
+     
+      <input class="form-check-input" type="radio" name="Enter Loan Repay Month" id="enterMonths" value="option2" checked>
+     
+      <label class="form-check-label" for="Enter Loan Repay Month">
+     9 Months
+     </label>
+     
+     <input class="form-check-input" type="radio" name="Enter Loan Repay Month" id="enterMonths" value="option3" checked>
+     
+      <label class="form-check-label" for="Enter Loan Repay Month">
+      1 year
+     </label>
+  </div>
+     
+     <br><button (click)="alertabc()" type="button" id="uploadDocumentButton" class="btn btn-primary">Upload Document</button><br>
+     <br><button (click)="abc()" type="button" id="applyLoanButton" button class="btn btn-primary">Apply For Loan</button><br>
+     </form>
+     </div> -->

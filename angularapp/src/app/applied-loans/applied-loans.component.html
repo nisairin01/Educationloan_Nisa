@@ -1,0 +1,19 @@
+<a href="#" routerLink='/admin'>Go Back</a>
+<h2>Loan Approval Page </h2>
+
+<ul *ngFor="let l of loans">
+    <li>loan Id: {{l.loanId}}</li>
+	<li>loan Type: {{l.loantype}}</li>
+	<li>Applicant Name: {{l.applicantName}}</li>
+	<li>Applicant Mobile: {{l.applicantMobile}}</li>
+	<li>Applicant Address: {{l.applicantAddress}}</li>
+	<li>Applicant Email: {{l.applicantEmail}}</li>
+	<li>Applicant Aadhar: {{l.applicantAadhar}}</li>
+	<li>Applicant Pan: {{l.applicantPan}}</li>
+	<li>Applicant Salary: {{l.applicantSalary}}</li>
+	<li>Loan Amount Required: {{l.loanAmountRequired}}</li>
+	<li>Loan Repayment Months:{{l.loanRepaymentMonths}}</li>
+    <a class="btn btn-btn-primary" style="color: green;" (click)="approve(l.loanId)">Approve</a>
+    <a class="btn btn-btn-primary" style="color: red;" (click)="reject(l.loanId)">Reject</a>
+</ul>
+

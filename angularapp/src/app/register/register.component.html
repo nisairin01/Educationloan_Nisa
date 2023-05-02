@@ -1,0 +1,204 @@
+<div class="my-5">
+    <div class="mx-auto w-25 " style="max-width:100%;">
+      <h2 class="text-center mb-3">Registration</h2>
+      <form [formGroup]="userRegister" (ngSubmit)="onSubmit(userRegister.value)">
+
+        <label for="userRole" class="form-label">UserRole</label>
+          <div class="form-check">
+            <input class="form-check-input"  formControlName="userRole" type="radio" name="userRole" id="Admin" value="Admin">
+            <label class="form-check-label" for="Admin">Admin</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="userRole"  name="userRole" id="User" value="User">
+            <label class="form-check-label" for="User">User</label>
+          </div>
+
+
+        <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input id="email"  formControlName="email" type="email" name="email" class="form-control" placeholder="Enter Email" required>
+            </div>
+            <div *ngIf="!email?.valid && (email?.dirty ||email?.touched)">
+                <div [hidden]="!email?.hasError('email')">Enter Valid Email</div>
+            </div>
+          </div>
+          
+          
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input id="username"  formControlName="username" type="text" name="username" class="form-control" placeholder="Enter Username" required>
+            </div>
+            <div *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
+                <div [hidden]="!username?.hasError('required')">Username is required</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="mobileNumber" class="form-label">Mobile Number</label>
+              <input id="mobileNumber"  formControlName="mobileNumber" type="text" name="mobileNumber" class="form-control" placeholder="Enter MobileNumber" required>
+            </div>
+            <div *ngIf="!mobileNumber?.valid">
+                <div [hidden]="!mobileNumber?.hasError('required')">Enter valid mobile number</div>
+                <div [hidden]="!mobileNumber?.hasError('pattern')"> Length should be 10</div>
+                </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input id="password"  formControlName="password" type="password" name="password" class="form-control" placeholder="Enter Password" required>
+            </div>
+            <div *ngIf="!password?.valid && password?.touched">
+                <div [hidden]="!password?.hasError('required')">Password is required</div>
+                </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input id="confirmPassword"  formControlName="confirmPassword" type="password" name="confirmPassword" class="form-control" placeholder="Enter Confirm Password" required>
+            </div>
+            <div *ngIf="!confirmPassword?.valid">
+                <div [hidden]="!confirmPassword?.hasError('required')">Password is required</div>
+                </div>
+                <div *ngIf="confirmPassword?.valid && confirmPassword?.touched">
+                <div [hidden]="!confirmPassword?.hasError('passwordMatchError')">Password and confirm Password must match</div>
+                </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <button [disabled]="!userRegister.valid"  class="btn btn-primary w-100" (click)="register()">Submit</button>
+            </div>
+          </div>
+      </form>
+      <a routerLink='' id="signinLink"> Already a user? Login</a>
+      </div>
+      </div>
+
+
+
+
+
+
+<!-- <div class="hey">
+ <h2>Register</h2>
+<form [formGroup]="userRegister" (ngSubmit)="onSubmit(userRegister.value)">
+
+ <div>
+ <input type="text" name="userRole" placeholder="Enter admin/user" id="admin/user" formControlName="userRole">
+
+ </div>
+
+<div *ngIf="!userRole?.valid">
+
+ <div [hidden]="!userRole?.hasError('required')">UserRole is required</div>
+ </div>
+<div>
+
+ <input type="email" name="email" placeholder="Enter email" id="email" formControlName="email">
+
+ </div>
+
+
+
+ <div *ngIf="!email?.valid && (email?.dirty ||email?.touched)">
+
+ <div [hidden]="!email?.hasError('email')">Enter Valid Email</div>
+
+ </div>
+ <div>
+
+ <input type="text" name="username" placeholder="Enter userame" id="username" formControlName="username">
+ </div>
+
+ <div *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
+
+ <div [hidden]="!username?.hasError('required')">Username is required</div>
+
+ </div>
+ <div>
+
+ <input type="text" name="mobileNumber" placeholder="Enter Mobilenumber" id="mobileNumber" formControlName="mobileNumber">
+
+</div>
+ <div *ngIf="!mobileNumber?.valid">
+ <div [hidden]="!mobileNumber?.hasError('required')">Enter valid mobile number</div>
+ <div [hidden]="!mobileNumber?.hasError('pattern')"> Length should be 10</div>
+ </div>
+ <div> <input type="password" name="password" placeholder="Password" id="password" formControlName="password">
+ </div>
+ <div *ngIf="!password?.valid && password?.touched">
+ <div [hidden]="!password?.hasError('required')">Password is required</div>
+ </div>
+ <div>
+<input type="password" name="confirmPassword" placeholder="Confirm Password" id="confirmPassword" formControlName="confirmPassword">
+</div>
+ <div *ngIf="!confirmPassword?.valid">
+ <div [hidden]="!confirmPassword?.hasError('required')">Password is required</div>
+ </div>
+ <div *ngIf="confirmPassword?.valid && confirmPassword?.touched">
+ <div [hidden]="!confirmPassword?.hasError('passwordMatchError')">Password and confirm Password must match</div>
+ </div>
+ <button [disabled]="!userRegister.valid"  class="btn-btn-primary" id="submitButton" (click)="register()">Submit</button>
+
+</form>
+ <a routerLink='/policy' id="signinLink"> Already a user? Login</a>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="hey">
+    <h2>- Register -</h2>
+    <h5>New User</h5>
+
+    <form #userform="ngForm" (ngSubmit)="onSubmit(userform.value)">
+    
+        <input type="text" ngModel name="userRole" placeholder="Enter admin/user" id="admin/user" required>
+        <br>
+        <input type="text" ngModel name="email" placeholder="Enter email" id="email" required>
+        <br>
+        <input type="text" ngModel name="username" placeholder="Enter Username" id="username" required>
+        <br>
+        <input type="text" ngModel name="mobileNumber" placeholder="Enter Mobilenumber" id="mobileNumber" required>
+        <br>
+        <input type="password" ngModel name="password" placeholder="Password" id="password" required>
+        <br>
+        <input type="password" ngModel name="confirmpassword" placeholder="Confirm Password" id="confirmPassword" required>
+        <br>
+        <button (click)="register()" class="btn-btn-primary" id="submitButton">Submit</button>
+        </form>
+        <a routerLink='' id="signinLink"> Already a user? Login</a>
+</div> -->

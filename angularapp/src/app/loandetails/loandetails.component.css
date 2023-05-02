@@ -1,0 +1,25 @@
+table{
+    margin: 10px;
+    text-align: center;
+}
+th,td{
+    border: 1px solid #77037B;
+    border-collapse: collapse;
+    /* padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 1.5px;
+    padding-right: 1.5px; */
+    padding: 4px;
+}
+a{
+    font-size: 20px;
+    color: #FC4F00;
+    text-decoration: none;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-style: italic;
+    color: #3E54AC;
+}

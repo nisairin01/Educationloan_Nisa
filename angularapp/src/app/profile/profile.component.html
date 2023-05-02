@@ -1,0 +1,20 @@
+<a href="#" routerLink='/user'>Go Back</a>
+
+<div class="abc">
+<h1>Profie Information</h1>
+<form  (ngSubmit)="onSubmit()">
+    <input type="number" name="loanid" placeholder="Enter your Loan Id" id="enterLoanId" ngModel #loanid>
+   <br>
+    <button  class="btn btn-btn-primary" id="submitBotton" (click)="pass(loanid.value)">Get Profile</button>
+    </form>
+<ul *ngIf="loan">
+    <li>Name: {{loan.applicantName}} </li>
+    <li>Mobile Number: {{loan.applicantMobile}}</li>
+    <li>Address: {{loan.applicantAddress}}</li>
+    <li>Salary: {{loan.applicantSalary}}</li>
+    <li>Loan Id:{{loan.loanId}}</li>
+</ul>
+</div>
+<a class="btn btn-btn-primary" routerLink='/updateloan'>Update Profile</a>
+
+    

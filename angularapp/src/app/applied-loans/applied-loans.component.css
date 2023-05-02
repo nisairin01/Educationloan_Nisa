@@ -1,0 +1,23 @@
+h2{
+    font-weight: bold;
+}
+ul{
+    margin: auto;
+    text-align: center;
+    list-style-type: none;
+    border: 1px solid black;
+    width: 350px;
+}
+li{
+    padding: 5px;
+}
+li:first{
+    font-size: 21px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-style: italic;
+    color: #3E54AC;
+}

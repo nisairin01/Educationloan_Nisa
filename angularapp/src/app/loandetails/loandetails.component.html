@@ -1,0 +1,51 @@
+<a href="#" routerLink='/admin'>Go Back</a>
+<h1>Loan Details</h1>
+<div>
+
+    <table border="2">
+        <tr>
+        <th>Loan Id</th>
+        <th>Loan Type</th>
+        <th>Applicant Name</th>
+        <th>Applicant Address</th>
+        <th>Applicant Mobile</th>
+        <th>Applicant Email</th>
+        <th>Applicant Aadhar</th>
+        <th>Applicant Pan</th>
+        <th>Applicant Salary</th>
+        <th>loanAmount Required</th>
+        <th>Loan Status</th>
+        <th>Action</th>
+        </tr>        
+        <tr *ngFor="let u of loans">
+            <td>{{u.loanId}}</td>
+            <td>{{u.loantype}}</td>
+            <td>{{u.applicantName}}</td>
+            <td>{{u.applicantAddress}}</td>
+            <td>{{u.applicantMobile}}</td>
+            <td>{{u.applicantEmail}}</td>
+            <td>{{u.applicantAadhar}}</td>
+            <td>{{u.applicantPan}}</td>
+            <td>{{u.applicantSalary}}</td>
+            <td>{{u.loanAmountRequired}}</td>
+            <td>{{u.loanStatus}}</td>
+            <td><a (click)="delete(u.loanId)" routerLink='loandetails'>Delete Record</a></td>
+        </tr>
+
+
+    <!-- <ul *ngFor="let l of loans">
+    <li>loanid: {{l.loanId}}</li>
+	<li>loantype: {{l.loantype}}</li>
+	<li>applicantName: {{l.applicantName}}</li>
+	<li>applicantAddress: {{l.applicantAddress}}</li>
+	<li>applicantAddress: {{l.applicantAddress}}</li>
+	<li>applicantEmail: {{l.applicantEmail}}</li>
+	<li>applicantAadhar: {{l.applicantAadhar}}</li>
+	<li>applicantPan: {{l.applicantPan}}</li>
+	<li>applicantSalary: {{l.applicantSalary}}</li>
+	<li>loanAmountRequired: {{l.loanAmountRequired}}</li>
+	<li>loanRepaymentMonths:{{l.loanRepaymentMonths}}</li>
+    <li>loanStatus: Approved </li>
+</ul> -->
+</table>
+</div>

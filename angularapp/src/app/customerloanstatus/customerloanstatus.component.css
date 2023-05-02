@@ -1,0 +1,22 @@
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-style: italic;
+    color: #3E54AC;
+}
+input{
+    border: 2px solid #8B1874;
+    padding: 10px;
+    margin: 5px;
+}
+button{
+    padding: 6px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 25px;
+}
+li{
+    list-style-type: none;
+    padding: 5px;
+    font-size: 20px;
+}

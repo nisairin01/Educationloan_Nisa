@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+body {    
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+        background: rgb(238,174,202);
+background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(184,207,234,1) 91%);
+}

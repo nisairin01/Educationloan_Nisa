@@ -1,0 +1,28 @@
+<div class="hello">
+    <h2>Login</h2>
+    <div id="form">
+         <form [formGroup]="Login"  (ngSubmit)="LoginForm()">
+        <input type="text" placeholder="Enter Email" name="email" formControlName="email"/>
+        <br>
+         <span style="color:red;" *ngIf="email && email.invalid && email.touched">*Enter correct email</span>   <br>
+        <input type ="password" placeholder="Enter Password" name="password" formControlName="password"/>
+         <br>
+        <span style="color:red;" *ngIf="password && password.invalid && password.touched">*password required</span>
+         <br>
+        <button type="submit" (click)="register">Login </button>
+        <p>New User/admin</p><a class="login" routerLink="register">Sign Up</a>
+
+
+
+
+
+
+    <!-- <form (ngSubmit)="login()">
+     <h3> Login </h3>
+      <input type="email" name="email" class="form-control" placeholder="Enter email" id="email" [(ngModel)]="email" required="" #em>
+    
+     <input type="password" name="password" class="form-control" placeholder="Enter password" id="password" [(ngModel)]="password" #pass>
+     <button type="submit" block="true" class="btn-btn-primary" (click)="hehe(em.value, pass.value)" routerLink='user'>Login</button>
+    </form>
+    <a routerLink='register' id="signupLink">New user? Click here</a> -->
+

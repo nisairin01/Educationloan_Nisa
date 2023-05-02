@@ -1,0 +1,28 @@
+<div class="container"><h1>Track Your Loan Application</h1>
+        <form  (ngSubmit)="onSubmit()">
+       <input type="number" name="loanid" placeholder="Enter your Loan Id" id="enterLoanId" ngModel #loanid>
+      <br>
+       <button  class="btn btn-btn-primary" id="submitBotton" (click)="pass(loanid.value)">Track</button>
+       </form>
+    </div>
+<div>
+    <h3>Loan Status</h3>
+        
+
+
+    <ul *ngIf="loan">
+        <li>Loan Id: {{loan.loanId}}</li>
+        <li>Loan Type: {{loan.loantype}}</li>
+        <li>Applicant Name:{{loan.applicantName}}</li>
+        <li>Applicant Address:{{loan.applicantAddress}}</li>
+        <li>Applicant Mobile:{{loan.applicantMobile}}</li>
+        <li>Applicant Email:{{loan.applicantEmail}}</li>
+        <li>Applicant Aadhar:{{loan.applicantAadhar}}</li>
+        <li>Applicant Pan:{{loan.applicantPan}}</li>
+        <li>Applicant Salary:{{loan.applicantSalary}}</li>
+        <li>Loan Amount Required:{{loan.loanAmountRequired}}</li>
+        <li>Loan Status:{{loan.loanStatus}}</li>
+    </ul>
+</div>
+
+<a href="#" routerLink='/user'>Go Back</a>

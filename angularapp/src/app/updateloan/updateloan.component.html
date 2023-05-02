@@ -1,0 +1,49 @@
+
+<div class="my-5">
+    <div class="mx-auto w-25 " style="max-width:100%;">
+      <h2 class="text-center mb-3">Update Details</h2>
+      <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+        <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="loanid" class="form-label">Provide valid Loan Id</label>
+              <input id="loanid"  formControlName="loanid" type="text" name="loanid" class="form-control" placeholder="Loan Type">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantName" class="form-label">Applicant Name</label>
+              <input id="applicantName"  formControlName="applicantName" type="text" name="applicantName" class="form-control" placeholder="Applicant Name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantAddress" class="form-label">Applicant Address</label>
+              <input id="applicantAddress"  formControlName="applicantAddress" type="text" name="applicantAddress" class="form-control" placeholder="Applicant Address">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantMobile" class="form-label">Applicant Mobile</label>
+              <input id="applicantMobile"  formControlName="applicantMobile" type="text" name="applicantMobile" class="form-control" placeholder="Applicant Mobile" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantEmail" class="form-label">Applicant Email</label>
+              <input id="applicantEmail"  formControlName="applicantEmail" type="text" name="applicantEmail" class="form-control" placeholder="Applicant Email" required >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="applicantSalary" class="form-label">Applicant Salary</label>
+              <input id="applicantSalary"  formControlName="applicantSalary" type="text" name="applicantSalary" class="form-control" placeholder="Applicant Salary ">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input [disabled]="!form.valid" class="btn btn-primary w-100" type="submit" value="Submit" >
+            </div>
+          </div>
+          </form>
+          </div>
+          </div>
